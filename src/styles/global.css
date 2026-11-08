@@ -1,0 +1,110 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: var(--text-normal);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: min(90%, var(--container-width));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--section-padding);
+}
+
+.section-title {
+  color: var(--color-white);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  text-align: center;
+}
+
+.section-subtitle {
+  color: var(--color-muted);
+  text-align: center;
+  margin-top: 12px;
+}
+
+.gold-text {
+  color: var(--color-gold);
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-primary);
+}
+
+/* Responsive spacing */
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 65px;
+  }
+
+  .container {
+    width: 90%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

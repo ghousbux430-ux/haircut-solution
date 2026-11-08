@@ -1,0 +1,186 @@
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: rgba(21, 21, 21, 0.96);
+  border-bottom: 1px solid rgba(200, 169, 106, 0.15);
+  backdrop-filter: blur(15px);
+}
+
+.navbar-container {
+  width: min(92%, 1300px);
+  min-height: 85px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.logo-icon {
+  color: var(--color-gold);
+  display: flex;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  letter-spacing: 2px;
+}
+
+.logo-text strong {
+  font-family: var(--font-heading);
+  font-size: 21px;
+  color: var(--color-white);
+}
+
+.logo-text small {
+  font-size: 10px;
+  color: var(--color-gold);
+  letter-spacing: 5px;
+  margin-top: 4px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-links > a:not(.mobile-book-btn) {
+  color: var(--color-muted);
+  font-size: 13px;
+  font-weight: 500;
+  position: relative;
+  transition: var(--transition);
+}
+
+.nav-links > a:not(.mobile-book-btn)::after {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-gold);
+  transition: var(--transition);
+}
+
+.nav-links > a:not(.mobile-book-btn):hover {
+  color: var(--color-gold);
+}
+
+.nav-links > a:not(.mobile-book-btn):hover::after {
+  width: 100%;
+}
+
+.navbar-book-btn,
+.mobile-book-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  background: var(--color-gold);
+  color: var(--color-primary);
+  padding: 12px 17px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.navbar-book-btn:hover,
+.mobile-book-btn:hover {
+  background: var(--color-gold-light);
+  transform: translateY(-2px);
+}
+
+.mobile-book-btn,
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 950px) {
+  .nav-links {
+    gap: 15px;
+  }
+
+  .nav-links > a:not(.mobile-book-btn) {
+    font-size: 12px;
+  }
+
+  .navbar-book-btn {
+    padding: 11px 12px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    min-height: 75px;
+  }
+
+  .navbar-book-btn {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: var(--color-gold);
+    padding: 8px;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    background: var(--color-secondary);
+    border-bottom: 1px solid rgba(200, 169, 106, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0 5%;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.35s ease, opacity 0.3s ease,
+      padding 0.3s ease;
+  }
+
+  .nav-links.active {
+    max-height: 500px;
+    opacity: 1;
+    padding: 15px 5% 25px;
+  }
+
+  .nav-links > a:not(.mobile-book-btn) {
+    padding: 12px 0;
+    font-size: 14px;
+  }
+
+  .nav-links > a:not(.mobile-book-btn)::after {
+    display: none;
+  }
+
+  .mobile-book-btn {
+    display: inline-flex;
+    margin-top: 12px;
+    width: 100%;
+  }
+}

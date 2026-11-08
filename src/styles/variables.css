@@ -1,0 +1,35 @@
+
+:root {
+  /* Brand Colors */
+  --color-primary: #151515;
+  --color-secondary: #202020;
+  --color-gold: #C8A96A;
+  --color-gold-light: #E0C795;
+  --color-cream: #E8DCC8;
+  --color-white: #F7F4EF;
+  --color-muted: #A7A29A;
+
+  /* Backgrounds */
+  --bg-main: #151515;
+  --bg-card: #202020;
+
+  /* Typography */
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Poppins", sans-serif;
+
+  /* Font Sizes */
+  --text-small: 0.875rem;
+  --text-normal: 1rem;
+  --text-large: 1.25rem;
+  --heading-medium: 2rem;
+  --heading-large: 3.5rem;
+
+  /* Spacing */
+  --section-padding: 100px;
+  --container-width: 1200px;
+
+  /* Effects */
+  --transition: all 0.3s ease;
+  --radius-small: 6px;
+  --radius-medium: 12px;
+}

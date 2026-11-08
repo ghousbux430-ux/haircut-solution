@@ -1,0 +1,143 @@
+
+.services-section {
+  background: #151515;
+  position: relative;
+  overflow: hidden;
+}
+
+.services-heading {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 55px;
+}
+
+.services-heading > span {
+  display: inline-block;
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
+
+.services-heading .section-title {
+  margin-bottom: 18px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.service-card {
+  background: #202020;
+  border: 1px solid rgba(200, 169, 106, 0.16);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  border-color: #C8A96A;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.service-image {
+  height: 230px;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.service-card:hover .service-image img {
+  transform: scale(1.07);
+}
+
+.service-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.45),
+    transparent 55%
+  );
+}
+
+.service-number {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: #E0C795;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  background: rgba(21, 21, 21, 0.75);
+  padding: 6px 11px;
+  border-radius: 5px;
+}
+
+.service-content {
+  padding: 22px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.service-content h3 {
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  margin-bottom: 9px;
+}
+
+.service-content p {
+  color: var(--color-muted);
+  font-size: 0.82rem;
+  line-height: 1.7;
+}
+
+.service-content a {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #151515;
+  background: var(--color-gold);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.service-content a:hover {
+  background: var(--color-gold-light);
+  transform: rotate(45deg);
+}
+
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .service-image {
+    height: 250px;
+  }
+
+  .services-heading {
+    margin-bottom: 35px;
+  }
+}
